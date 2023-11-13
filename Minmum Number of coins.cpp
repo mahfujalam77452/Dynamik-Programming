@@ -16,3 +16,5 @@ int minimumElements(vector<int> &num, int x)
                return -1;
     return dp[x];
 }
+//Time complexity O(x*num.size())
+//Space complexity O(n).
