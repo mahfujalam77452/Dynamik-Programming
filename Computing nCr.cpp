@@ -43,3 +43,24 @@ int main(){
     return 0;
 }
 // } Driver Code Ends
+/*
+    By pre computing
+int fecto[N];//Pre computing factorial upto N by modulo M.
+int binPow(int a,int b)
+{
+    if (b == 0)return 1;
+    if (b == 1)return a;
+    int ret = binPow(a,b/2);
+    if (b%2 == 0)return (ret * ret)%M;
+    return ((ret * ret)%M * a)%M;
+}
+int inv(int a)
+{
+    return (binPow(a,M - 2)%M + M)%M;
+}
+int ncr(int a,int b)
+{
+    if (b < 0 or a < 0)return 0;
+    return (((fecto[a] * inv(fecto[b]))%M * inv(fecto[a - b]))%M + M)%M;
+}
+/*
