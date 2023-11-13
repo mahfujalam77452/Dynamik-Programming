@@ -18,3 +18,31 @@ int minimumElements(vector<int> &num, int x)
 }
 //Time complexity O(x*num.size())
 //Space complexity O(n).
+//recurtion and momoization.
+int minimum(int x,vector<int>&num,vector<int>&dp){
+    if(x==0)
+       return 0;
+    if(x<0)
+       return INT_MAX;
+    if(dp[x]!=-1)
+       return dp[x];
+    int mini=INT_MAX;
+    for(int i=0;i<num.size();i++){
+       int ans=minimum( x-num[i], num, dp) ;
+      if(ans!=INT_MAX)
+           mini=min(1+ans,mini);
+           }
+    dp[x]=mini;
+    return mini;
+}
+
+int minimumElements(vector<int> &num, int x)
+{  vector<int> dp(x + 1, -1);
+    int ans = minimum(x, num, dp);
+    // Return -1 as it is not possible to make desired sum 'X'.
+    if (ans == INT_MAX)
+    {
+        return -1;
+    }
+    return ans;
+}
