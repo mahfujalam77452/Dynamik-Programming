@@ -1,3 +1,5 @@
+//Problem link
+//https://practice.geeksforgeeks.org/problems/get-minimum-squares0538/1
 //Recursion + Memoization
 	int solveMem(int n,vector<int>&dp){
     if(n==0)
