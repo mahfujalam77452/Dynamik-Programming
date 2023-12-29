@@ -2,6 +2,7 @@
 //https://www.codingninjas.com/studio/problems/0-1-knapsack_920542?topList=love-babbar-dsa-sheet-problems&leftPanelTab=0&utm_source=youtube&utm_medium=affiliate&utm_campaign=Lovebabbar&leftPanelTabValue=SUBMISSION
 
 //Recursion and Memoization
+//Here index should be n-1.
 int SolveMem(vector<int>& weight, vector<int>& value, int index, int capacity, vector<vector<int>>& dp) {
 
     // Base case
