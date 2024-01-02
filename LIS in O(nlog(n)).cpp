@@ -1,15 +1,8 @@
-//{ Driver Code Starts
-#include<bits/stdc++.h>
-using namespace std;
+//Problem Link
+//https://practice.geeksforgeeks.org/problems/longest-increasing-subsequence-1587115620/1
 
-// } Driver Code Ends
-
-
-class Solution
-{
-    public:
-    //Function to find length of longest increasing subsequence.
-    int SolveMem(int n,int a[],int curr,int prev,vector<vector<int>>&dp){
+//O(n^2)
+int SolveMem(int n,int a[],int curr,int prev,vector<vector<int>>&dp){
         
         if(curr==n){
             return 0;
@@ -30,6 +23,7 @@ class Solution
         
         return dp[curr][prev+1]= max(take,notTake);
     }
+//O(nlog(n))
     int solveOpt(int n,int a[]){
         
         if (n==0){
@@ -50,12 +44,3 @@ class Solution
         }
         return ans.size();
     }
-    int longestSubsequence(int n, int a[])
-    {
-       // your code here
-       //vector<vector<int>>dp(n,vector<int>(n+1,-1));
-       //return SolveMem(n,a,0,-1,dp);
-       return solveOpt(n,a);
-    }
-};
-
